@@ -3,6 +3,8 @@ import thunk from "redux-thunk";
 import { reducers } from "./rootReducer";
 const devToolsExtension = (window as any).__REDUX_DEVTOOLS_EXTENSION__;
 
+
+
 const simplifyObjectMiddleware = () => (next: Dispatch<AnyAction>) => (action: AnyAction) => {
   next({...action});
 };
@@ -13,11 +15,11 @@ const middleware: Middleware[] = [
 ];
 
 // tslint:disable-next-line: ban-types
-const enhancers: Function[] = [devToolsExtension({name: "shopping cart"})];
+//const enhancers: Function[] = [devToolsExtension({name: "shopping cart"})];
 
 const composedEhancers = compose(
   applyMiddleware(...middleware),
-  ...enhancers,
+  //...enhancers,
 );
 
 export default createStore(
